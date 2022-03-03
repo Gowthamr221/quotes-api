@@ -1,4 +1,6 @@
+require('dotenv').config()
 const express = require('express')
+
 const quotes = require('./quotes.json')
 app = express()
 
@@ -10,7 +12,8 @@ app.get('/',(req,res)=>{
     res.json(list["quotes"][Math.ceil(Math.random()*66)])
 })
 
+const PORT = process.env.PORT || 5000
 
-app.listen(3000,()=>{
+app.listen(PORT,()=>{
     console.log("server is running 🎇")
 })
